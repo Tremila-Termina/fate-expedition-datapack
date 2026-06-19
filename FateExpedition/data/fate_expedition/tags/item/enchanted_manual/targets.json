@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "#fate_expedition:enchanted_manual/swords",
+    "#fate_expedition:enchanted_manual/pickaxes",
+    "#fate_expedition:enchanted_manual/shovels_and_hoes",
+    "#fate_expedition:enchanted_manual/axes",
+    "#fate_expedition:enchanted_manual/bows",
+    "#fate_expedition:enchanted_manual/maces",
+    "#fate_expedition:enchanted_manual/tridents",
+    "#fate_expedition:enchanted_manual/helmets",
+    "#fate_expedition:enchanted_manual/chestplates",
+    "#fate_expedition:enchanted_manual/leggings",
+    "#fate_expedition:enchanted_manual/boots",
+    "#fate_expedition:enchanted_manual/crossbows"
+  ]
+}
