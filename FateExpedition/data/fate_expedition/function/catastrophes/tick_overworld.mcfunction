@@ -1,0 +1,20 @@
+execute if score #cat_elapsed fe.data matches 5 run function fate_expedition:events/wave_blood_moon
+execute if score #cat_elapsed fe.data matches 15 run function fate_expedition:events/meteor
+execute if score #cat_elapsed fe.data matches 20 run function fate_expedition:events/wave_blood_moon
+execute if score #cat_elapsed fe.data matches 28 run function fate_expedition:events/meteor
+execute if score #cat_elapsed fe.data matches 35 run function fate_expedition:events/wave_blood_moon
+execute if score #cat_elapsed fe.data matches 40 run function fate_expedition:events/meteor
+execute if score #cat_elapsed fe.data matches 47 run function fate_expedition:events/creeper_wave
+execute if score #cat_elapsed fe.data matches 52 run function fate_expedition:events/wave_blood_moon
+execute if score #cat_elapsed fe.data matches 58 run function fate_expedition:events/meteor
+execute if score #cat_elapsed fe.data matches 64 run effect give @a[gamemode=!spectator] minecraft:darkness 5 0 true
+execute if score #cat_elapsed fe.data matches 65 run function fate_expedition:events/wave_blood_moon
+execute if score #cat_elapsed fe.data matches 70 run function fate_expedition:events/meteor
+execute if score #cat_elapsed fe.data matches 75 run function fate_expedition:events/creeper_wave
+execute if score #cat_elapsed fe.data matches 80 run function fate_expedition:events/wave_blood_moon
+execute if score #cat_elapsed fe.data matches 85 run function fate_expedition:events/meteor
+execute if score #cat_elapsed fe.data matches 95 run function fate_expedition:events/meteor
+execute if score #cat_elapsed fe.data matches 100 run function fate_expedition:events/wave_blood_moon
+execute if score #cat_elapsed fe.data matches 105 run function fate_expedition:events/creeper_wave
+execute if score #cat_elapsed fe.data matches 110 run function fate_expedition:events/meteor
+execute if score #cat_elapsed fe.data matches 115 run function fate_expedition:events/wave_blood_moon

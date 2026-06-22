@@ -1,0 +1,21 @@
+execute if score #cat_elapsed fe.data matches 3 run playsound minecraft:entity.breeze.wind_burst master @a[gamemode=!spectator] ~ ~ ~ 0.5 1.5
+execute if score #cat_elapsed fe.data matches 5 run function fate_expedition:events/void_push
+execute if score #cat_elapsed fe.data matches 12 run function fate_expedition:events/void_push
+execute if score #cat_elapsed fe.data matches 20 run function fate_expedition:events/shulker_wave
+execute if score #cat_elapsed fe.data matches 28 run function fate_expedition:events/void_push
+execute if score #cat_elapsed fe.data matches 35 run function fate_expedition:events/breath_warn
+execute if score #cat_elapsed fe.data matches 36.. run function fate_expedition:events/breath_tick
+execute if score #cat_elapsed fe.data matches 42 run function fate_expedition:events/void_push
+execute if score #cat_elapsed fe.data matches 50 run function fate_expedition:events/shulker_wave
+execute if score #cat_elapsed fe.data matches 56 run function fate_expedition:events/breath_warn
+execute if score #cat_elapsed fe.data matches 62 run function fate_expedition:events/void_push
+execute if score #cat_elapsed fe.data matches 68 run function fate_expedition:events/ender_hunt_wave
+execute if score #cat_elapsed fe.data matches 72 run function fate_expedition:events/breath_warn
+execute if score #cat_elapsed fe.data matches 76 run function fate_expedition:events/void_push
+execute if score #cat_elapsed fe.data matches 82 run function fate_expedition:events/shulker_wave
+execute if score #cat_elapsed fe.data matches 87 run function fate_expedition:events/void_push
+execute if score #cat_elapsed fe.data matches 95 run function fate_expedition:events/breath_warn
+execute if score #cat_elapsed fe.data matches 100 run function fate_expedition:events/void_push
+execute if score #cat_elapsed fe.data matches 105 run function fate_expedition:events/shulker_wave
+execute if score #cat_elapsed fe.data matches 110 run function fate_expedition:events/breath_warn
+execute if score #cat_elapsed fe.data matches 115 run function fate_expedition:events/void_push

@@ -40,8 +40,22 @@ $Legacy = @(Get-ChildItem -Recurse -File $Pack | Select-String -Pattern 'random_
 if ($Legacy.Count -gt 0) {
     $Errors.Add("Legacy random_event namespace or rc.* objective remains")
 }
-if ((Get-ChildItem -Recurse -File (Join-Path $FunctionRoot "debug\event") -Filter *.mcfunction).Count -ne 16) {
-    $Errors.Add("Expected 16 debug event entrypoints")
+if ((Get-ChildItem -Recurse -File (Join-Path $FunctionRoot "debug\event") -Filter *.mcfunction).Count -ne 32) {
+    $Errors.Add("Expected 32 debug event entrypoints")
+}
+$DebugIds = Get-ChildItem -Recurse -File (Join-Path $FunctionRoot "debug\event") -Filter *.mcfunction | ForEach-Object {
+    $match = [regex]::Match((Get-Content -Raw -LiteralPath $_.FullName), 'scoreboard players set #event fe\.data (\d+)')
+    if ($match.Success) { [int]$match.Groups[1].Value }
+}
+if ((Compare-Object (1..32) ($DebugIds | Sort-Object -Unique)).Count -gt 0) {
+    $Errors.Add("Debug event entrypoints must cover each ID from 1 through 32 exactly")
+}
+Get-ChildItem -Recurse -File $FunctionRoot -Filter *.mcfunction | ForEach-Object {
+    $content = Get-Content -Raw -LiteralPath $_.FullName
+    if ($content -match 'matches\s+[^\r\n ]*,') { $Errors.Add("Invalid comma score range at $($_.FullName)") }
+    if ($content -match 'summon minecraft:(skeleton|wither_skeleton|piglin|piglin_brute)[^\r\n]*\{') {
+        $Errors.Add("Default armed mob must be summoned without NBT at $($_.FullName)")
+    }
 }
 if ($Errors.Count) { $Errors | ForEach-Object { Write-Error $_ }; exit 1 }
-Write-Host "Validation passed: $($Functions.Count) functions, 16 events, pack format 94.1."
+Write-Host "Validation passed: $($Functions.Count) functions, 32 events, pack format 94.1."

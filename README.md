@@ -1,18 +1,34 @@
-# 命运远征
+# Fate Expedition Datapack
 
-命运远征是面向 Minecraft Java 1.21.11 的 1–4 人高压通关数据包。它将从出生到击杀末影龙的流程划分为荒野求生、炼狱夺火、要塞追猎和终末决战四个阶段，并加入灾厄、命运碎片、世界命运、阶段任务、16 个事件、4 个大灾变和末影龙三阶段战斗。
+Fate Expedition is a cooperative Minecraft Java 1.21.11 datapack built around completing the full survival progression and defeating the Ender Dragon. It adds escalating calamity, shared Fate Shards, timed team objectives, permanent milestone boons, stage-specific random events, and a three-phase dragon fight.
 
-> 警告：流星、火焰和虫蚀事件会永久破坏地形。请先备份世界，建议在专用世界中游玩。
+The datapack is designed for 1–4 players. In-game text is Simplified Chinese.
 
-## 安装
+> Some events can permanently change terrain through explosions, fire, lava, or infested blocks. Back up important worlds before playing.
 
-1. 将 `FateExpedition` 复制到世界的 `datapacks` 目录。
-2. 进入 Minecraft Java 1.21.11。
-3. 执行 `/reload`。
-4. 执行 `/trigger fe_ping` 检查数据包。
-5. 执行 `/trigger fe_start` 开始。
+## Features
 
-## 玩家命令
+- Four progression stages: Overworld Survival, Nether Expedition, Stronghold Hunt, and Final Battle.
+- Thirty-two stage-specific events with protection against repeating any of the previous three events.
+- Four 90-second catastrophes that become more dangerous in three phases.
+- Four possible World Fates that alter supplies, combat, event pacing, or the victory deadline.
+- Shared Fate Shards used for enchantments, structure locating, protection, provocation, and Nether team travel.
+- Seven advancement-based milestone menus with permanent team attribute boons or instant supplies.
+- A stable sidebar whose rows do not reorder when values change.
+- Ender Dragon phases, End Crystal objectives, a final-stand timer, and a victory report.
+
+## Installation
+
+1. Download the latest release ZIP or the `FateExpedition` folder.
+2. Open the target Minecraft world folder and then open `datapacks`.
+3. Place the ZIP or `FateExpedition` folder directly inside `datapacks`.
+4. Enter the world and run `/reload`.
+5. Run `/trigger fe_ping` to confirm that the datapack is active.
+6. Run `/trigger fe_start` to begin the expedition.
+
+The installed pack must have `pack.mcmeta` and `data` directly at its root.
+
+## Player Commands
 
 ```mcfunction
 /trigger fe_start
@@ -22,28 +38,71 @@
 /trigger fe_uninstall
 ```
 
-`/trigger use` 打开共享命运碎片菜单：随机附魔、下界结构定位、降低灾厄或主动挑衅。所有菜单选项都可直接点击。
+- `fe_start`: start a new expedition in the current world.
+- `fe_stop`: stop the active expedition while keeping permanent milestone attributes.
+- `use`: open the clickable Fate Shard menu.
+- `fe_ping`: verify that the datapack triggers are available.
+- `fe_uninstall`: remove the datapack's scoreboards, temporary entities, and permanent attributes.
 
-## 核心规则
+## Progression
 
-- 每 5 分钟灾厄 +1。
-- 进入下界、取得烈焰棒、返回主世界和进入末地时分别 +3。
-- 灾厄达到 10 会按当前阶段触发大灾变。
-- 普通事件结束后才开始下一段 20–60 秒冷却。
-- 世界命运会改变补给、敌人、事件节奏或通关时限。
-- 七个原版进度会解锁全队四选一里程碑奖励；属性奖励在死亡、停止和通关后保留，只有卸载才移除。
+1. **Overworld Survival** ends when the team first enters the Nether.
+2. **Nether Expedition** requires obtaining a Blaze Rod and returning to the Overworld.
+3. **Stronghold Hunt** ends when the team enters The End.
+4. **Final Battle** tracks End Crystals and the three Ender Dragon phases until victory.
 
-完整规则和事件数值见 [docs/GAMEPLAY.md](docs/GAMEPLAY.md) 与 [docs/EVENT_BALANCE.md](docs/EVENT_BALANCE.md)。
+Each stage includes a timed team objective. Faster completion awards more Fate Shards, while failure increases calamity.
 
-## 开发
+## Calamity and Catastrophes
+
+Calamity ranges from 0 to 10 and rises through playtime, deaths, major progression steps, failed objectives, and provocation. Higher values strengthen enemies and hazards, shorten event cooldowns, and eventually remove positive events.
+
+At calamity 10, the current stage starts a catastrophe. Catastrophes last 90 seconds, intensify at 30-second intervals, and reward 5 Fate Shards when survived.
+
+## Fate Shards
+
+Open the shared menu with `/trigger use`:
+
+- **Enchant — 2 shards:** improve one eligible item owned by the buyer.
+- **Locate — 5 shards:** locate a Nether Fortress or Bastion Remnant while in the Nether.
+- **Protection — 3 shards:** reduce calamity while no event or catastrophe is active.
+- **Provoke — gain 2 shards:** increase calamity and immediately trigger the next threat; once per stage.
+- **Team Travel — 10 shards:** search for a safe position in a nearby Nether Fortress or Bastion Remnant and move players who were in the Nether when the search began.
+
+Team Travel uses a bounded datapack-only search with a maximum radius of 1536 blocks. It refunds all 10 shards if the search fails or is interrupted.
+
+## Milestone Boons
+
+Seven main-path advancements open a shared four-choice menu. The first valid click selects the reward for the team. Attribute rewards survive death, stopping the expedition, and defeating the Ender Dragon. Players who join later receive previously selected attribute rewards, but not past item rewards.
+
+Use `/trigger fe_uninstall` to remove all permanent milestone attributes and reset the datapack state.
+
+## Troubleshooting
+
+If a trigger command is unavailable:
+
+1. Run `/reload`.
+2. Run `/datapack list enabled` and confirm that Fate Expedition is listed.
+3. Check that `pack.mcmeta` is directly inside the installed ZIP or folder.
+4. Confirm that the world or server allows the `/trigger` command.
+
+Detailed gameplay and balance information is available in [docs/GAMEPLAY.md](docs/GAMEPLAY.md) and [docs/EVENT_BALANCE.md](docs/EVENT_BALANCE.md).
+
+## Development
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\tools\validate.ps1
 powershell -ExecutionPolicy Bypass -File .\tools\build-release.ps1
 ```
 
-构建产物写入 `dist/FateExpedition-v0.1.0.zip`，ZIP 根目录直接包含 `pack.mcmeta` 和 `data`。
+The release builder creates `dist/FateExpedition-v0.1.1.zip` with `pack.mcmeta` and `data` at the ZIP root.
 
-## 许可
+## Credits
 
-MIT License。随机附魔与里程碑实现迁移自同一作者维护的 Random Event 数据包。
+Thanks to [Tremila-Termina](https://github.com/Tremila-Termina) for helping test Fate Expedition.
+
+The random enchantment and milestone boon systems were adapted from the open-source [Random Event Datapack](https://github.com/FredFive007/random-calamity-datapack).
+
+## License
+
+Released under the [MIT License](LICENSE).

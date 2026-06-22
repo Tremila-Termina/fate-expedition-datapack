@@ -10,10 +10,14 @@ execute as @a[scores={fe_use=1}] run function fate_expedition:fate/buy_enchant
 execute as @a[scores={fe_use=2}] run function fate_expedition:fate/show_locate
 execute as @a[scores={fe_use=3}] run function fate_expedition:fate/buy_ward
 execute as @a[scores={fe_use=4}] run function fate_expedition:fate/buy_wager
+execute as @a[scores={fe_use=5}] at @s run function fate_expedition:fate/show_travel
 scoreboard players set @a[scores={fe_use=1..}] fe_use 0
 execute as @a[scores={fe_locate=1}] at @s run function fate_expedition:fate/locate_fortress
 execute as @a[scores={fe_locate=2}] at @s run function fate_expedition:fate/locate_bastion
 scoreboard players set @a[scores={fe_locate=1..}] fe_locate 0
+execute as @a[scores={fe_travel=1}] at @s run function fate_expedition:fate/travel_fortress
+execute as @a[scores={fe_travel=2}] at @s run function fate_expedition:fate/travel_bastion
+scoreboard players set @a[scores={fe_travel=1..}] fe_travel 0
 execute as @a[scores={fe_choice=1}] run function fate_expedition:events/soul_tax_pay
 execute as @a[scores={fe_choice=2}] run function fate_expedition:events/soul_tax_fight
 scoreboard players set @a[scores={fe_choice=1..}] fe_choice 0
