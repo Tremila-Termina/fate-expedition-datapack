@@ -83,4 +83,4 @@ team join fe.line.timer "§5"
 team join fe.line.task "§6"
 team join fe.line.dragon "§7"
 function fate_expedition:boons/maintain_modifiers
-tellraw @a [{"text":"[命运远征] ","color":"dark_purple","bold":true},{"text":"v0.1.2 已加载。使用 /trigger fe_ping 检测。","color":"gray"}]
+tellraw @a [{"text":"[命运远征] ","color":"dark_purple","bold":true},{"text":"v0.1.3 已加载。使用 /trigger fe_ping 检测。","color":"gray"}]

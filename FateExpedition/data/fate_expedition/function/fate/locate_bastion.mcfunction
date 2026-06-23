@@ -1,4 +1,3 @@
-execute unless score @s fe.menu matches 2 run return 0
 scoreboard players set @s fe.menu 0
 execute unless score #shards fe.data matches 5.. run tellraw @s {"text":"共享碎片已不足5枚。","color":"red"}
 execute unless score #shards fe.data matches 5.. run return 0

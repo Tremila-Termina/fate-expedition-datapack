@@ -95,7 +95,7 @@ powershell -ExecutionPolicy Bypass -File .\tools\validate.ps1
 powershell -ExecutionPolicy Bypass -File .\tools\build-release.ps1
 ```
 
-The release builder creates `dist/FateExpedition-v0.1.2.zip` with `pack.mcmeta` and `data` at the ZIP root.
+The release builder creates `dist/FateExpedition-v0.1.3.zip` with `pack.mcmeta` and `data` at the ZIP root.
 
 ## Credits
 
