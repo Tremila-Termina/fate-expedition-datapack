@@ -1,4 +1,3 @@
-execute unless score @s fe.menu matches 1 run return 0
 scoreboard players set @s fe.menu 0
 execute if score #event fe.data matches 1.. run tellraw @s {"text":"事件进行中，无法护命。","color":"red"}
 execute if score #event fe.data matches 1.. run return 0

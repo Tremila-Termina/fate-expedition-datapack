@@ -1,4 +1,3 @@
-execute unless score @s fe.menu matches 2 run return 0
 scoreboard players set @s fe.menu 0
 execute if score #locate_active fe.data matches 1 run tellraw @s {"text":"已有结构定位正在搜索。","color":"red"}
 execute if score #locate_active fe.data matches 1 run return 0

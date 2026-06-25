@@ -1,4 +1,3 @@
-execute unless score @s fe.menu matches 1 run return 0
 scoreboard players set @s fe.menu 0
 execute if score #stage fe.data matches 1 if score #wager_1 fe.data matches 1 run tellraw @s {"text":"本阶段已经挑衅过命运。","color":"red"}
 execute if score #stage fe.data matches 1 if score #wager_1 fe.data matches 1 run return 0

@@ -57,6 +57,12 @@ scoreboard players add #travel_phase fe.data 0
 scoreboard players add #travel_xi fe.data 0
 scoreboard players add #travel_yi fe.data 0
 scoreboard players add #travel_zi fe.data 0
+scoreboard players add #use_gui_active fe.data 0
+scoreboard players add #use_gui_mode fe.data 0
+scoreboard players add #use_gui_click fe.data 0
+scoreboard players add #use_gui_cooldown fe.data 0
+scoreboard players add #use_gui_nether fe.data 0
+scoreboard players add #random_positive fe.data 0
 scoreboard players add #locate_active fe.data 0
 scoreboard players add #locate_reserved fe.data 0
 scoreboard players add #locate_scan fe.data 0
@@ -68,6 +74,10 @@ scoreboard players add #locate_z fe.data 0
 execute if score #travel_reserved fe.data matches 1 run scoreboard players add #shards fe.data 10
 scoreboard players set #travel_reserved fe.data 0
 scoreboard players set #travel_active fe.data 0
+scoreboard players set #use_gui_active fe.data 0
+scoreboard players set #use_gui_mode fe.data 0
+scoreboard players set #use_gui_cooldown fe.data 0
+scoreboard players set #use_gui_nether fe.data 0
 execute if score #locate_reserved fe.data matches 1 run scoreboard players add #shards fe.data 5
 scoreboard players set #locate_reserved fe.data 0
 scoreboard players set #locate_active fe.data 0
@@ -75,8 +85,11 @@ kill @e[tag=fe_travel_ray]
 kill @e[tag=fe_travel_anchor]
 kill @e[tag=fe_travel_probe]
 kill @e[tag=fe_travel_destination]
+kill @e[type=minecraft:chest_minecart,tag=fe_use_gui]
+kill @e[type=minecraft:marker,tag=fe_use_gui_anchor]
 kill @e[tag=fe_locate_ray]
 kill @e[tag=fe_locate_destination]
+tag @a remove fe_use_gui_user
 tag @a remove fe_locate_requester
 team add fe.line.stage
 team add fe.line.fate

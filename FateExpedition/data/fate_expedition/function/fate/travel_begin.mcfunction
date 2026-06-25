@@ -1,4 +1,3 @@
-execute unless score @s fe.menu matches 3 run return 0
 scoreboard players set @s fe.menu 0
 execute unless dimension minecraft:the_nether run tellraw @s {"text":"你已离开下界，未扣费。","color":"red"}
 execute unless dimension minecraft:the_nether run return 0

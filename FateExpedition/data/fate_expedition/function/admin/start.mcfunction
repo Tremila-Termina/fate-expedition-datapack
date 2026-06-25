@@ -41,6 +41,10 @@ scoreboard players set #travel_phase fe.data 0
 scoreboard players set #travel_xi fe.data 0
 scoreboard players set #travel_yi fe.data 0
 scoreboard players set #travel_zi fe.data 0
+scoreboard players set #use_gui_active fe.data 0
+scoreboard players set #use_gui_mode fe.data 0
+scoreboard players set #use_gui_cooldown fe.data 0
+scoreboard players set #use_gui_nether fe.data 0
 scoreboard players set #locate_active fe.data 0
 scoreboard players set #locate_reserved fe.data 0
 scoreboard players set #locate_ticks fe.data 0
@@ -51,6 +55,9 @@ kill @e[tag=fe_locate_ray]
 kill @e[tag=fe_locate_destination]
 kill @e[tag=fe_travel_anchor]
 kill @e[tag=fe_travel_probe]
+kill @e[type=minecraft:chest_minecart,tag=fe_use_gui]
+kill @e[type=minecraft:marker,tag=fe_use_gui_anchor]
+tag @a remove fe_use_gui_user
 tag @a remove fe_locate_requester
 execute store result score #fate fe.data run random value 1..4
 execute if score #fate fe.data matches 1 run scoreboard players set #doom fe.data 2
