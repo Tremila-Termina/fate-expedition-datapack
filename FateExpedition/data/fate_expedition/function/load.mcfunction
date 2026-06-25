@@ -53,6 +53,10 @@ scoreboard players add #travel_reserved fe.data 0
 scoreboard players add #travel_distance fe.data 0
 scoreboard players add #travel_ticks fe.data 0
 scoreboard players add #travel_type fe.data 0
+scoreboard players add #travel_phase fe.data 0
+scoreboard players add #travel_xi fe.data 0
+scoreboard players add #travel_yi fe.data 0
+scoreboard players add #travel_zi fe.data 0
 scoreboard players add #locate_active fe.data 0
 scoreboard players add #locate_reserved fe.data 0
 scoreboard players add #locate_scan fe.data 0
@@ -68,6 +72,8 @@ execute if score #locate_reserved fe.data matches 1 run scoreboard players add #
 scoreboard players set #locate_reserved fe.data 0
 scoreboard players set #locate_active fe.data 0
 kill @e[tag=fe_travel_ray]
+kill @e[tag=fe_travel_anchor]
+kill @e[tag=fe_travel_probe]
 kill @e[tag=fe_travel_destination]
 kill @e[tag=fe_locate_ray]
 kill @e[tag=fe_locate_destination]

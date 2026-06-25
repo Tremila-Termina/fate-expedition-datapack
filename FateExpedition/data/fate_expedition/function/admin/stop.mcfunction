@@ -4,6 +4,10 @@ scoreboard players set #cat fe.data 0
 execute if score #travel_reserved fe.data matches 1 run scoreboard players add #shards fe.data 10
 scoreboard players set #travel_reserved fe.data 0
 scoreboard players set #travel_active fe.data 0
+scoreboard players set #travel_phase fe.data 0
+scoreboard players set #travel_xi fe.data 0
+scoreboard players set #travel_yi fe.data 0
+scoreboard players set #travel_zi fe.data 0
 execute if score #locate_reserved fe.data matches 1 run scoreboard players add #shards fe.data 5
 scoreboard players set #locate_reserved fe.data 0
 scoreboard players set #locate_active fe.data 0
@@ -13,6 +17,8 @@ kill @e[tag=fe_event_mob]
 kill @e[tag=fe_storm_marker]
 kill @e[tag=fe_breath_marker]
 kill @e[tag=fe_travel_ray]
+kill @e[tag=fe_travel_anchor]
+kill @e[tag=fe_travel_probe]
 kill @e[tag=fe_travel_destination]
 kill @e[tag=fe_locate_ray]
 kill @e[tag=fe_locate_destination]
