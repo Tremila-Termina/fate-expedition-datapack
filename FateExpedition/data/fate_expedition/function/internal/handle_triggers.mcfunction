@@ -7,7 +7,7 @@ scoreboard players set @a[scores={fe_stop=1..}] fe_stop 0
 execute as @a[scores={use=1..}] if score #running fe.data matches 1 run function fate_expedition:fate/show_menu
 scoreboard players set @a[scores={use=1..}] use 0
 execute as @a[scores={fe_use=1}] run function fate_expedition:fate/buy_enchant
-execute as @a[scores={fe_use=2}] run function fate_expedition:fate/show_locate
+execute as @a[scores={fe_use=2}] at @s run function fate_expedition:fate/show_locate
 execute as @a[scores={fe_use=3}] run function fate_expedition:fate/buy_ward
 execute as @a[scores={fe_use=4}] run function fate_expedition:fate/buy_wager
 execute as @a[scores={fe_use=5}] at @s run function fate_expedition:fate/show_travel

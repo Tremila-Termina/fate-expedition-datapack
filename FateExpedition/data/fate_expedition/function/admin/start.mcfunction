@@ -37,7 +37,15 @@ scoreboard players set #wager_3 fe.data 0
 scoreboard players set #wager_4 fe.data 0
 scoreboard players set #travel_active fe.data 0
 scoreboard players set #travel_reserved fe.data 0
+scoreboard players set #locate_active fe.data 0
+scoreboard players set #locate_reserved fe.data 0
+scoreboard players set #locate_ticks fe.data 0
+scoreboard players set #locate_scan fe.data 0
+scoreboard players set #locate_type fe.data 0
 scoreboard players set @a fe.menu 0
+kill @e[tag=fe_locate_ray]
+kill @e[tag=fe_locate_destination]
+tag @a remove fe_locate_requester
 execute store result score #fate fe.data run random value 1..4
 execute if score #fate fe.data matches 1 run scoreboard players set #doom fe.data 2
 execute if score #fate fe.data matches 4 run scoreboard players set #deadline fe.data 5400

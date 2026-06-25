@@ -53,11 +53,25 @@ scoreboard players add #travel_reserved fe.data 0
 scoreboard players add #travel_distance fe.data 0
 scoreboard players add #travel_ticks fe.data 0
 scoreboard players add #travel_type fe.data 0
+scoreboard players add #locate_active fe.data 0
+scoreboard players add #locate_reserved fe.data 0
+scoreboard players add #locate_scan fe.data 0
+scoreboard players add #locate_ticks fe.data 0
+scoreboard players add #locate_type fe.data 0
+scoreboard players add #locate_x fe.data 0
+scoreboard players add #locate_y fe.data 0
+scoreboard players add #locate_z fe.data 0
 execute if score #travel_reserved fe.data matches 1 run scoreboard players add #shards fe.data 10
 scoreboard players set #travel_reserved fe.data 0
 scoreboard players set #travel_active fe.data 0
+execute if score #locate_reserved fe.data matches 1 run scoreboard players add #shards fe.data 5
+scoreboard players set #locate_reserved fe.data 0
+scoreboard players set #locate_active fe.data 0
 kill @e[tag=fe_travel_ray]
 kill @e[tag=fe_travel_destination]
+kill @e[tag=fe_locate_ray]
+kill @e[tag=fe_locate_destination]
+tag @a remove fe_locate_requester
 team add fe.line.stage
 team add fe.line.fate
 team add fe.line.doom
