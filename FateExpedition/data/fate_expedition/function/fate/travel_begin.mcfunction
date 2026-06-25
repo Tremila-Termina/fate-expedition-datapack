@@ -18,6 +18,7 @@ execute if score #travel_distance fe.data matches 1537.. run return 0
 scoreboard players remove #shards fe.data 10
 scoreboard players set #travel_reserved fe.data 1
 scoreboard players set #travel_active fe.data 1
+scoreboard players set #travel_phase fe.data 1
 scoreboard players set #travel_ticks fe.data 0
 scoreboard players set #travel_scan fe.data 0
 tag @a remove fe_travel_party
@@ -25,6 +26,8 @@ tag @a remove fe_travel_requester
 execute as @a[gamemode=!spectator] at @s if dimension minecraft:the_nether run tag @s add fe_travel_party
 tag @s add fe_travel_requester
 kill @e[tag=fe_travel_ray]
+kill @e[tag=fe_travel_anchor]
+kill @e[tag=fe_travel_probe]
 kill @e[tag=fe_travel_destination]
 summon minecraft:marker ~ 64 ~ {Tags:["fe_travel_ray"],Rotation:[0f,0f]}
 summon minecraft:marker ~ 64 ~ {Tags:["fe_travel_ray"],Rotation:[11.25f,0f]}
