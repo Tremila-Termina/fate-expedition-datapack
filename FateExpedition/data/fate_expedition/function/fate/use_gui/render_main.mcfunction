@@ -1,3 +1,4 @@
+function fate_expedition:fate/use_gui/clear_container
 item replace entity @e[type=minecraft:chest_minecart,tag=fe_use_gui,limit=1] container.4 with minecraft:air
 item replace entity @e[type=minecraft:chest_minecart,tag=fe_use_gui,limit=1] container.10 with minecraft:enchanted_book[custom_data={fe_use_gui:1},custom_name={text:"附魔（2碎片）",color:"light_purple",italic:false}]
 item replace entity @e[type=minecraft:chest_minecart,tag=fe_use_gui,limit=1] container.11 with minecraft:compass[custom_data={fe_use_gui:1},custom_name={text:"定位（5碎片）",color:"aqua",italic:false}]

@@ -43,6 +43,7 @@ scoreboard players set #travel_yi fe.data 0
 scoreboard players set #travel_zi fe.data 0
 scoreboard players set #use_gui_active fe.data 0
 scoreboard players set #use_gui_mode fe.data 0
+scoreboard players set #use_gui_cooldown fe.data 0
 scoreboard players set #use_gui_nether fe.data 0
 scoreboard players set #locate_active fe.data 0
 scoreboard players set #locate_reserved fe.data 0

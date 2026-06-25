@@ -60,6 +60,7 @@ scoreboard players add #travel_zi fe.data 0
 scoreboard players add #use_gui_active fe.data 0
 scoreboard players add #use_gui_mode fe.data 0
 scoreboard players add #use_gui_click fe.data 0
+scoreboard players add #use_gui_cooldown fe.data 0
 scoreboard players add #use_gui_nether fe.data 0
 scoreboard players add #random_positive fe.data 0
 scoreboard players add #locate_active fe.data 0
@@ -75,6 +76,7 @@ scoreboard players set #travel_reserved fe.data 0
 scoreboard players set #travel_active fe.data 0
 scoreboard players set #use_gui_active fe.data 0
 scoreboard players set #use_gui_mode fe.data 0
+scoreboard players set #use_gui_cooldown fe.data 0
 scoreboard players set #use_gui_nether fe.data 0
 execute if score #locate_reserved fe.data matches 1 run scoreboard players add #shards fe.data 5
 scoreboard players set #locate_reserved fe.data 0

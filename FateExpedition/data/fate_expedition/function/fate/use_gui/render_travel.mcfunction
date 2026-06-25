@@ -1,3 +1,4 @@
+function fate_expedition:fate/use_gui/clear_container
 item replace entity @e[type=minecraft:chest_minecart,tag=fe_use_gui,limit=1] container.4 with minecraft:air
 item replace entity @e[type=minecraft:chest_minecart,tag=fe_use_gui,limit=1] container.11 with minecraft:nether_brick[custom_data={fe_use_gui:1},custom_name={text:"堡垒团队传送（10碎片）",color:"red",italic:false}]
 item replace entity @e[type=minecraft:chest_minecart,tag=fe_use_gui,limit=1] container.13 with minecraft:gilded_blackstone[custom_data={fe_use_gui:1},custom_name={text:"遗迹团队传送（10碎片）",color:"gold",italic:false}]
