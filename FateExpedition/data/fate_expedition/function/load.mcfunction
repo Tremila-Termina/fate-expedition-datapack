@@ -21,6 +21,7 @@ scoreboard objectives add fe_choice trigger
 scoreboard objectives add fe_boon trigger
 scoreboard objectives add fe_ping trigger
 scoreboard objectives add fe_uninstall trigger
+scoreboard objectives modify fe.display displayname {"text":"命运远征","color":"light_purple","bold":true}
 scoreboard players add #running fe.data 0
 scoreboard players add #pending fe.boon 0
 scoreboard players add #upgrade_done fe.boon 0
@@ -107,13 +108,13 @@ team modify fe.line.event prefix {"text":"事件：","color":"yellow"}
 team modify fe.line.timer prefix {"text":"时间：","color":"gray"}
 team modify fe.line.task prefix {"text":"任务：","color":"green"}
 team modify fe.line.dragon prefix {"text":"龙战：","color":"dark_purple"}
-team join fe.line.stage "§0"
-team join fe.line.fate "§1"
-team join fe.line.doom "§2"
-team join fe.line.shard "§3"
-team join fe.line.event "§4"
-team join fe.line.timer "§5"
-team join fe.line.task "§6"
-team join fe.line.dragon "§7"
+team join fe.line.stage §0
+team join fe.line.fate §1
+team join fe.line.doom §2
+team join fe.line.shard §3
+team join fe.line.event §4
+team join fe.line.timer §5
+team join fe.line.task §6
+team join fe.line.dragon §7
 function fate_expedition:boons/maintain_modifiers
 tellraw @a [{"text":"[命运远征] ","color":"dark_purple","bold":true},{"text":"v0.1.3 已加载。使用 /trigger fe_ping 检测。","color":"gray"}]

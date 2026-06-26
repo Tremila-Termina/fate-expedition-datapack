@@ -64,6 +64,7 @@ execute if score #fate fe.data matches 1 run scoreboard players set #doom fe.dat
 execute if score #fate fe.data matches 4 run scoreboard players set #deadline fe.data 5400
 execute as @a run scoreboard players operation @s fe.prev = @s fe.deaths
 scoreboard objectives setdisplay sidebar fe.display
+scoreboard objectives modify fe.display displayname {"text":"命运远征","color":"light_purple","bold":true}
 function fate_expedition:ui/announce_fate
 function fate_expedition:ui/update_sidebar
 tellraw @a [{"text":"[命运远征] ","color":"dark_purple","bold":true},{"text":"挑战开始：荒野求生。","color":"red"}]

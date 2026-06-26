@@ -1,11 +1,19 @@
-scoreboard players set "§0" fe.display 70
-scoreboard players set "§1" fe.display 60
-scoreboard players set "§2" fe.display 50
-scoreboard players set "§3" fe.display 40
-scoreboard players set "§4" fe.display 30
-scoreboard players set "§5" fe.display 20
+scoreboard players reset "§0" fe.display
+scoreboard players reset "§1" fe.display
+scoreboard players reset "§2" fe.display
+scoreboard players reset "§3" fe.display
+scoreboard players reset "§4" fe.display
+scoreboard players reset "§5" fe.display
 scoreboard players reset "§6" fe.display
 scoreboard players reset "§7" fe.display
+scoreboard players set §0 fe.display 70
+scoreboard players set §1 fe.display 60
+scoreboard players set §2 fe.display 50
+scoreboard players set §3 fe.display 40
+scoreboard players set §4 fe.display 30
+scoreboard players set §5 fe.display 20
+scoreboard players reset §6 fe.display
+scoreboard players reset §7 fe.display
 team modify fe.line.stage suffix {"text":"荒野求生","color":"white"}
 execute if score #stage fe.data matches 2 run team modify fe.line.stage suffix {"text":"炼狱夺火","color":"red"}
 execute if score #stage fe.data matches 3 run team modify fe.line.stage suffix {"text":"要塞追猎","color":"yellow"}
@@ -56,14 +64,14 @@ execute if score #cat fe.data matches 4 run team modify fe.line.event suffix {"t
 team modify fe.line.timer suffix [{"score":{"name":"#cooldown","objective":"fe.data"}},{"text":" 秒","color":"dark_gray"}]
 execute if score #event fe.data matches 1.. run team modify fe.line.timer suffix [{"score":{"name":"#event_time","objective":"fe.data"}},{"text":" 秒","color":"white"}]
 execute if score #cat fe.data matches 1.. run team modify fe.line.timer suffix [{"score":{"name":"#cat_time","objective":"fe.data"}},{"text":" 秒","color":"red"}]
-execute if score #stage fe.data matches 1 run scoreboard players set "§6" fe.display 10
+execute if score #stage fe.data matches 1 run scoreboard players set §6 fe.display 10
 execute if score #stage fe.data matches 1 run team modify fe.line.task suffix {"text":"下界远征","color":"white"}
-execute if score #stage fe.data matches 2 run scoreboard players set "§6" fe.display 10
+execute if score #stage fe.data matches 2 run scoreboard players set §6 fe.display 10
 execute if score #stage fe.data matches 2 run team modify fe.line.task suffix {"text":"夺取烈焰","color":"white"}
-execute if score #stage fe.data matches 3 run scoreboard players set "§6" fe.display 10
+execute if score #stage fe.data matches 3 run scoreboard players set §6 fe.display 10
 execute if score #stage fe.data matches 3 run team modify fe.line.task suffix {"text":"追寻末路","color":"white"}
-execute if score #stage fe.data matches 4 run scoreboard players set "§6" fe.display 10
+execute if score #stage fe.data matches 4 run scoreboard players set §6 fe.display 10
 execute if score #stage fe.data matches 4 run team modify fe.line.task suffix {"text":"水晶破坏者","color":"white"}
-execute if score #stage fe.data matches 4 run scoreboard players set "§7" fe.display 5
+execute if score #stage fe.data matches 4 run scoreboard players set §7 fe.display 5
 execute if score #stage fe.data matches 4 run team modify fe.line.dragon suffix [{"text":"第 "},{"score":{"name":"#dragon_phase","objective":"fe.data"}},{"text":" 阶段"}]
 execute if score #stage fe.data matches 4 if score #dragon_phase fe.data matches 3 run team modify fe.line.task suffix [{"text":"最后抗争 "},{"score":{"name":"#final_timer","objective":"fe.data"}},{"text":"秒"}]
