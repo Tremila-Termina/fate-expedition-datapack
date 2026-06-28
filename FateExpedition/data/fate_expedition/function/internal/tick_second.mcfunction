@@ -13,3 +13,4 @@ execute if score #cat fe.data matches 0 if score #event fe.data matches 1.. run 
 execute if score #cat fe.data matches 0 if score #event fe.data matches 0 if score #cooldown fe.data matches 1.. run scoreboard players remove #cooldown fe.data 1
 execute if score #cat fe.data matches 0 if score #event fe.data matches 0 if score #cooldown fe.data matches ..0 run function fate_expedition:events/select
 function fate_expedition:ui/update_sidebar
+function fate_expedition:advancements/tick
