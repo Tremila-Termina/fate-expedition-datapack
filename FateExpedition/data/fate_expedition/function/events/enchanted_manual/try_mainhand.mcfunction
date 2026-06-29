@@ -62,3 +62,21 @@ execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #
 execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/crossbows run execute store success score @s fe.random run enchant @s minecraft:unbreaking 3
 execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/crossbows run execute store success score @s fe.random run enchant @s minecraft:piercing 4
 execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/crossbows run execute store success score @s fe.random run enchant @s minecraft:mending 1
+
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/spears run execute store success score @s fe.random run enchant @s minecraft:sharpness 5
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/spears run execute store success score @s fe.random run enchant @s minecraft:unbreaking 3
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/spears run execute store success score @s fe.random run enchant @s minecraft:lunge 3
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/spears run execute store success score @s fe.random run enchant @s minecraft:looting 3
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/spears run execute store success score @s fe.random run enchant @s minecraft:mending 1
+
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/shears run execute store success score @s fe.random run enchant @s minecraft:efficiency 5
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/shears run execute store success score @s fe.random run enchant @s minecraft:unbreaking 3
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/shears run execute store success score @s fe.random run enchant @s minecraft:mending 1
+
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/fishing_rods run execute store success score @s fe.random run enchant @s minecraft:lure 3
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/fishing_rods run execute store success score @s fe.random run enchant @s minecraft:luck_of_the_sea 3
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/fishing_rods run execute store success score @s fe.random run enchant @s minecraft:unbreaking 3
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/fishing_rods run execute store success score @s fe.random run enchant @s minecraft:mending 1
+
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/simple_durables run execute store success score @s fe.random run enchant @s minecraft:unbreaking 3
+execute unless score @s fe.random matches 1 if items entity @s weapon.mainhand #fate_expedition:enchanted_manual/simple_durables run execute store success score @s fe.random run enchant @s minecraft:mending 1

@@ -12,6 +12,10 @@
     "#fate_expedition:enchanted_manual/chestplates",
     "#fate_expedition:enchanted_manual/leggings",
     "#fate_expedition:enchanted_manual/boots",
-    "#fate_expedition:enchanted_manual/crossbows"
+    "#fate_expedition:enchanted_manual/crossbows",
+    "#fate_expedition:enchanted_manual/spears",
+    "#fate_expedition:enchanted_manual/shears",
+    "#fate_expedition:enchanted_manual/fishing_rods",
+    "#fate_expedition:enchanted_manual/simple_durables"
   ]
 }
